@@ -70,6 +70,49 @@ Iot 개발자 C#/WinApp 리포지토리 2025
 
 - `C# 12.0`, `.NET 8`, `Visual Studio 2022` Community Edition에서 학습
 
+## 요약 정리
+
+###  Visual Studio 설치 시 확인 사항
+
+- 반드시 설치해야 할 워크로드:
+  - [✔] **.NET 데스크톱 개발**
+  - [✔] **ASP.NET 및 웹 개발**
+- 선택 옵션:
+  - [. ] **.NET Multi-platform App UI 개발 (MAUI)** → 모바일/크로스플랫폼 개발용
+
+> 설치 후 콘솔 앱 생성 시 "콘솔 앱 (.NET)" 선택 권장  
+> "콘솔 앱 (.NET Framework)"는 과거용이며 최신 기능 제한 있음
+
+---
+
+### ✅ C#이란?
+
+- Microsoft에서 개발한 객체지향 언어 (2000년 발표)
+- Java와 문법 유사, .NET 플랫폼 기반
+- 자동 메모리 관리 (`GC`), 클래스 중심 설계
+- Unity, MAUI, Windows 앱 개발 등 다양하게 활용 가능
+
+---
+
+### ✅ C# & .NET 버전 요약
+
+| C# 버전 | 연도 | 대응 .NET | 비고 |
+|---------|------|-----------|------|
+| C# 6~7  | 2015~2018 | .NET Framework 4.6~4.7 | |
+| C# 9    | 2020 | .NET 5.0 | Core/Framework 통합 |
+| C# 10   | 2021 | .NET 6.0 | 버전 단일화 시작 |
+| C# 11   | 2022 | .NET 7.0 | |
+| C# 12   | 2023 | .NET 8.0 | 현재 기준 최신 |
+| C# 13   | 2024(예정) | .NET 9.0 | VS 2022 지원 예정 |
+
+---
+
+### ✅ .NET 정리
+
+- .NET은 CLR(Common Language Runtime) 기반 실행 환경
+- 원래 Windows 전용 `.NET Framework` → 이후 리눅스도 지원하는 `.NET Core` 등장
+- **2020년 `.NET 5.0`부터 통합**되어 `.NET Core`, `.NET Framework` 구분 사라짐
+
 ## 2일차
 - WinApp으로 문법 학습. 문법 학습 후 WPF로 이전
 
