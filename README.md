@@ -116,7 +116,322 @@ Iot 개발자 C#/WinApp 리포지토리 2025
 ## 2일차
 - WinApp으로 문법 학습. 문법 학습 후 WPF로 이전
 
+### 새 프로젝트(콘솔) 만들기
+- 순서
+    1. 프로젝트 마법사
+        - 언어 : C#
+        - 플랫폼 : 모든 플랫폼
+        - 프로젝트 : 콘솔 선택 (데스크톱, 웹, 콘솔)
+    2. 새 프로젝트 구성
+        - 프로젝트 이름, 위치, 솔루션 이름
+        - 솔루션 및 프로젝트를 같은 디렉토리에 배치 체크박스 해제 : 솔루션 내에 여러 프로젝트를 관리
+    3. 추가 정보
+        - 프레임워크 : .Net 8.0 선택
+        - LTS(Long Term Support) : 개발자가 기능, 보안 업데이트를 지원
+        - 최상위 문 사용 안함 체크박스 선택
+
+### 새 프로젝트 (테스크톱, 윈앱) 만들기
+- 아직 멀티플랫폼은 지원 안됨(Windows만 지원)
+- Windows Forms : 가장 오래된 윈앱 개발
+- WPF : 좀 더 디자인적으로 뛰어난 윈앱 개발
+- 순서
+    1. 프로젝트 마법사
+        - 언어 : C#
+        - 플랫폼 : 모든 플랫폼
+        - 프로젝트 : 데스크톱 선택
+    2. Windows Forms 앱 선택 (.NET Framework가 안 적힌 것)
+    3. 프로젝트 명 입력
+    4. 추가 정보
+        - 프레임워크 : .NET 8.0 (장기지원) 선택
+
+- 프로젝트 구조
+    - 종속성 : 필요모듈 추가, 관리, 삭제
+    - Form1.cs : 윈폼 앱 개발 로직
+        - Form1.Desiner.cs : 실제 디자인 소스
+        - Form1.resx : 아이콘, 이미지, 리소스문자열 관리 파일
+    - Program.cs : 시작 프로그램 소스. 지우면 안됨
+
+### 솔루션 관리
+- 하나의 솔루션에 여러개 프로젝트가 있으면 시작 프로젝트가 선별되어야 함
+- 굵은 글씨체로 나오는 프로젝트가 시작 프로젝트
+    1. 시작 프로젝트로 변경할 프로젝트 > 마우스 오른쪽 > 시작 프로젝트로 설정
+    2. 전체 솔루션 > 속성 > 속성 페이지
+        - 시작 프로젝트 구성 메뉴 > 현재 선택 영역 선택 
+
+- 전체 솔루션 : *.sin(전체 솔루션 관리)
+    - 프로젝트파일(C#) : *.csproj
+    - 프로젝트파일(CPP) : *.vcxproj
+
+- debug/release 모드
+    - debug : 개발시 사용모드, 디버깅 로그, 디버깅을 위주
+    - release : 배포시 사용모드. 프로그램 최적화, 성능 업. 릴리즈로 하면 디버깅이 안되는 경우가 예전엔 있었다.
+
+### 윈폼 앱/ 윈앱 개발 순서
+
+1. Form1.cs 이름 변경 : FrmMain.cs
+    - 변경 시 `모든 참조 이름도 바꾸시겠습니까?` 메시지 창
+        - 반드시 `예` 선택
+2. FrmMain.cs [디자인] 클릭 오픈
+    - 마우스로 크기 조정
+3. 속성 창(F4) 오픈, 솔루션 탐색기 아래쪽 드래그 후 붙이기
+4. PyQt Designer와 거의 유사
+    - FrmMain 속성 창 > Text > Form1 글자를 변경 후 엔터
+    - size 속성 > Width, Height를 직접 수정
+    - StartPosition > CenterScreen으로 변경
+    - MaximizeBox > False
+    - FormBorderStyle > Sizable -> FixedSingle로 변경
+5. 보기 > 도구 상자 클릭
+    - 공용 컨트롤 > Button 드래그
+    - 더블클릭, 클릭으로 선택 후 폼에서 왼쪽버튼 누르고 드래그 등 다양
+
+6. 속성 창 - 드롭다운 컨트롤 클릭 > 여러 클래스 리스트
+
+7. button1 속성 변경
+    - (Name) > button 1 -> BtnMsg 로 변경
+    - Size 조정
+    - Text > button1 > 메시지 로 변경
+
+8. 중간마다 Ctrl + S(저장), Ctrl+Shift+S(모두 저장) 눌러서 저장 습관
+
+9. 속성 창의 이벤트아이콘(번개표시) 클릭
+    - Click에 선택 되어 있음
+    - 버튼의 경우, 버튼클릭이 기본 이벤트
+    - Click 오른쪽 빈공간을 더블클릭
+    - 버튼을 클릭했을 시 처리할 이벤트 메서드가 자동 생성
+
+10. 새로 만든 컨트롤을 더블 클릭
+    - 이벤트 메서드가 자동 생성
+    - 최초에 아무런 이벤트가 없을 때 더블클릭 시 기본 이벤트 메서드 생성
+
+11. 오류 발생 시
+    - 폼 디자인의 컨트롤 이벤트와 로직 코드 상의 이벤트 처리 메서드 생성 상 불일치로 발생
+    - 이벤트 이름은 생성되고, 이벤트 정의 메서드는 생성이 안 돼서
+
+    <img src="./image/cs0002.png" width="600">
+
+    - FrmMain.Designer.cs 파일 오픈 
+    - Windows From Designer generated code를 확장
+    - 오류난 이벤트 이름 삭제
+        - BtnMsg.Click += .....
+        - BtnOk.Click += ...
+
+12. MessageBox.Show() 작업
+    - MessageBoxIcon.Warning, MessageBoxIcon.Error 사용시 알람 사운드 발생
+    알람 사운드 발생
+
+13. 폼 디자이너 화면과 코드 상 전환
+    - F7(코드 보기), Shift+F7(디자인 전환)
+
+14. VS에서 더블클릭 함부로 하지 말것!!!
+    - 이벤트 메서드 생성, 컨트롤 자동 생성, 폼 디자인 표시 등에서만 사용
+
+15. 두 개 이상의 컨트롤 선택 후 Ctrl키 누른 상태에서 드래그하면 그룹으로 복사 
+
+### 윈앱 컨트롤
+- `Button` : 클릭을 위한 컨트롤
+    - 보통 Btn~ 으로 시작
+    - `(Name)` : 소스코드상에서 접근, 사용
+    - Enabled : 사용여부
+    - Location : 폼상의 위치 (x, y)
+    - Size : 버튼 크기 (w, h)
+    - TavIndex : 실행 후 탭으로 포커스가 가는 순서 (레이블에는 포커스 안감)
+    - Text : 버튼 표시 글씨
+    - Visible : 화면 표시 여부
+    - **Click** : 버튼 클릭 이벤트 처리 메서드 연결
+
+- `Label` : 화면 상의 글자만 표현하는 컨트롤
+    - 보통 Lbl~ 로 시작
+    - Button 컨트롤과 동일
+    - 이벤트 거의 사용하지 않음
+
+- `TextBox` : 텍스트 입력을 위한 컨트롤
+    - 보통 Txt~ 로 시작
+    - Button 컨트롤과 동일
+    - MaxLength : 최대 몇자까지 적을 수 있는지
+    - Multiline : 여러줄 사용 여부. true가 되어야 높이 조절 가능
+    - PlaceholderText : 입력전 입력내용 표시
+    - **TextChanged** : 글자가 변경되면 발생하는 이벤트
+    - **KeyPress** : 키보드 입력이 생기면 발생하는 이벤트
+
+- `ComboBox` : 여러개 중 아이템을 선택하는 컨트롤
+    - 보통 Cbo~ 로 시작
+    - Button 컨트롤과 속성은 동일
+    - Items(Collection) : 필요한 아이템 할당
+    - **SelectionIndexChanged** : 선택한 아이템 순번이 바뀔때 발생하는 이벤트
+    - **SelectedValueChanged** : 선택한 아이템 값이 바뀔때 발생하는 이벤트
+
+- `RadioButton` : 여러개중 하나만 선택하는 컨트롤
+    - 보통 Rdo~ 로 시작
+    - Button 컨트롤과 속성은 동일
+    - Checked : 체크 여부
+
 ### C# 문법
+- 기본 문법 - C++, Java와 거의 동일. C++와의 차이점만 비교.
+    1. 기본구조 및 주석 - [소스](./day02/DayConsole2/SyntaxWinApp01/FrmMain.cs)
+        - 네임스페이스, 클래스, 메서드
+
+        ```cs
+        namespace ConsoleApp2
+        {
+            /// <summary>
+            /// 프로그램 클래스
+            /// </summary>
+            internal class Program
+            {
+                    /// <summary>
+                    /// 주석 - XML 주석. 소스코드 자동 문서 생성시 사용.
+                    /// </summary>
+                    /// <param name="args"></param>
+                static void Main(string[] args)
+                {
+                    // 주석 - 한 줄 주석
+                    Console.WriteLine("Hello, World!");
+                    /*
+                    * 주석 - 여러 줄 주석
+                    * 여러 줄을 작성할 때 편리
+                    */
+                }
+            }
+        }
+        ```
+    2. 자료형과 변수, Nullable
+        - 변수 사용은 C++과 동일
+        - 자료형도 C++ 유사, 클래스형은 차이있음. 닷넷타입이 더 추가됨. (공통 타입을 더 쓰기 위해서 추가된 부분)
+        - 닷넷타입은 여러 언어에서 공통으로 사용위해서 추가된 기능
+        - Nullable : 특수타입 데이터 타입 뒤에 ? 추가. Null 할당 가능
+        - var타입 : 지역변수에서 타입을 동적으로 지정. 컴파일시 해당 타이으로 자동 지정
+            - 지역변수만 가능(전역변수 사용불가)
+            - 한번 타입이 지정되면 다른 타입으로 변경불가
+        
+    3. 연산자
+        - C, C++ 과 동일!
+
+    4. 분기문, 반복문
+        - if문
+        - switch문
+        - for문
+        - for each는 컬렉션에서...
+        - while문
+
+
+## 2일차 핵심 요약 (WinForms + C# 문법)
+
+### WinForms 프로젝트 생성 및 구조 이해
+
+#### 새 프로젝트 생성 절차
+- 콘솔 앱
+  1. 프로젝트 마법사에서 콘솔 선택 (C#, 모든 플랫폼)
+  2. 프로젝트 이름, 위치 설정
+  3. .NET 8.0 (LTS) 선택, "최상위 문 사용 안함" 체크
+
+- Windows Forms 앱 (윈앱)
+  1. 프로젝트 마법사 > C# + 데스크톱 > Windows Forms 앱 (.NET Framework 미포함 버전 선택)
+  2. .NET 8.0 (LTS) 선택
+
+#### 프로젝트 구성 요소
+| 파일명 | 역할 |
+|--------|------|
+| Form1.cs | 폼 로직 (사용자 코드) |
+| Form1.Designer.cs | 폼 디자인 소스 (자동 생성) |
+| Form1.resx | 리소스 (아이콘, 문자열 등) |
+| Program.cs | 진입점, 삭제하면 안 됨 |
+
+### 기본 설정 및 실무 설정
+
+#### 솔루션 관리
+- 하나의 솔루션에 여러 프로젝트 가능 → 시작 프로젝트 지정 필요
+- 설정 방법:
+  - 솔루션 탐색기 > 프로젝트 우클릭 > "시작 프로젝트로 설정"
+  - 또는 솔루션 우클릭 > 속성 > 시작 프로젝트 구성 메뉴 이용
+
+#### Debug / Release 모드
+| 모드 | 설명 |
+|------|------|
+| Debug | 개발 중, 디버깅 정보 포함 |
+| Release | 배포용, 성능 최적화됨 (디버깅 불가) |
+
+#### 폼 설정
+- FormBorderStyle = FixedSingle : 창 크기 고정
+- MaximizeBox = false : 최대화 버튼 제거
+- StartPosition = CenterScreen : 화면 중앙 정렬
+
+#### 디자인과 코드 전환 단축키
+- 디자인 보기: Shift + F7
+- 코드 보기: F7
+
+### 폼 컨트롤 구성
+
+#### Button
+- 클릭용, 보통 이름은 Btn~
+- 주요 속성: (Name), Text, Size, Enabled, Visible, Click 이벤트
+
+#### Label
+- 텍스트 출력용, 이름은 Lbl~
+
+#### TextBox
+- 텍스트 입력용, 이름은 Txt~
+- 주요 속성: MaxLength, Multiline, PlaceholderText
+- 주요 이벤트: TextChanged, KeyPress
+
+#### ComboBox
+- 항목 선택용 드롭다운, 이름은 Cbo~
+- 주요 속성: Items, SelectedIndex, SelectedItem
+- 이벤트: SelectedIndexChanged, SelectedValueChanged
+
+#### RadioButton
+- 여러 개 중 하나만 선택, 이름은 Rdo~
+- 속성: Checked
+
+### 문법 정리
+
+#### Nullable 타입
+```csharp
+int? score = null;
+if (score != null)
+{
+    Console.WriteLine(score.Value);
+}
+```
+
+#### var 타입
+```csharp
+var name = "홍길동";
+```
+- 지역 변수 전용, 타입 고정됨
+
+#### 연산자
+- C, C++와 동일 (=, +, -, *, /, %, &&, ||, ^, &, |, ! 등)
+
+#### 조건문과 반복문
+- if, switch, for, foreach, while, do while
+
+### 실수 방지 포인트
+- SelectedValue는 데이터 바인딩된 ComboBox에서만 값이 있음
+- KeyPress는 문자 키만 감지, KeyDown은 모든 키 감지
+- 폼 설정 시 FormBorderStyle, MaximizeBox, StartPosition을 조합해서 사용
+- Nullable은 입력이 비어 있을 수 있는 상황을 처리할 때 유용함
+- 이벤트 자동 생성(더블클릭)은 필요한 경우에만 사용
+
+## 3일차
+
+### C# 문법
+
+- 기본 문법
+
+    5. 메서드
+    6. 문자열 처리
+    7. 클래스와 객체
+    8. 접근제어자
+    9. 상속, 다형성, 추상클래스, 인터페이스
+    10. 예외처리
+    11. 컬렉션
+    12. 파일입출력
+    13. 델리게이트, 이벤트
+    14. 람다식
+    15. LINQ
+    16. 비동기
+    17. 속성
+    18. 제네릭
 
 ## 10일차
 
