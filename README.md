@@ -405,7 +405,7 @@ var name = "홍길동";
 #### 조건문과 반복문
 - if, switch, for, foreach, while, do while
 
-### 실수 방지 포인트
+### 추가 학습
 - SelectedValue는 데이터 바인딩된 ComboBox에서만 값이 있음
 - KeyPress는 문자 키만 감지, KeyDown은 모든 키 감지
 - 폼 설정 시 FormBorderStyle, MaximizeBox, StartPosition을 조합해서 사용
