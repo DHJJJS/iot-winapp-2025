@@ -32,16 +32,6 @@
             BtnOk = new Button();
             SuspendLayout();
             // 
-            // BtnMsg
-            // 
-            BtnMsg.Location = new Point(472, 259);
-            BtnMsg.Name = "BtnMsg";
-            BtnMsg.Size = new Size(100, 40);
-            BtnMsg.TabIndex = 0;
-            BtnMsg.Text = "메시지";
-            BtnMsg.UseVisualStyleBackColor = true;
-            BtnMsg.Click += BtnMsg_Click;
-            // 
             // BtnOk
             // 
             BtnOk.Location = new Point(366, 259);
@@ -51,6 +41,16 @@
             BtnOk.Text = "오케이";
             BtnOk.UseVisualStyleBackColor = true;
             BtnOk.Click += BtnOk_Click;
+            // 
+            // BtnMsg
+            // 
+            BtnMsg.Location = new Point(472, 259);
+            BtnMsg.Name = "BtnMsg";
+            BtnMsg.Size = new Size(100, 40);
+            BtnMsg.TabIndex = 0;
+            BtnMsg.Text = "메시지";
+            BtnMsg.UseVisualStyleBackColor = true;
+            BtnMsg.Click += BtnMsg_Click;
             // 
             // FrmMain
             // 
@@ -64,7 +64,6 @@
             Name = "FrmMain";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "문법학습 윈앱 01";
-            Load += FrmMain_Load;
             ResumeLayout(false);
         }
 

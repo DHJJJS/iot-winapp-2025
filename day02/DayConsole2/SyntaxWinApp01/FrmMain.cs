@@ -1,81 +1,77 @@
-using Microsoft.VisualBasic;
-
-namespace SyntaxWinApp01
+ï»¿namespace SyntaxWinApp01
 {
     public partial class FrmMain : Form
     {
+        // var int09 = 10; // varëŠ” ì „ì—­ë³€ìˆ˜ ì‚¬ìš© ë¶ˆê°€
         public FrmMain()
         {
             InitializeComponent();
         }
 
-        private void FrmMain_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtnMsg_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("¸Ş½ÃÁö", "¾Ë¸²", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-        }
         private void BtnOk_Click(object sender, EventArgs e)
         {
-            // ÀÚ·áÇü
-            sbyte byteVal = 127; // signed byte : -128 ~ 127 ¼ö ÀúÀå
-            System.SByte sbtVal2 = System.SByte.MinValue; // -128 ÇÒ´ç
-            byte btVal = 255; // byte : 0 ~ 255 ¼ö ÀúÀå
-            System.Byte btVal2 = System.Byte.MaxValue; // 0 ÇÒ´ç
-            short stVal = 32767; // short : -32768 ~ 32767 ¼ö ÀúÀå
-            System.Int16 stVal2 = System.Byte.MinValue; 
-            ushort ustVal = 65535; // unsigned short : 0 ~ 65535 ÀúÀå (2 bytes Å©±â)
-            System.UInt16 ustVal2 = System.UInt16.MaxValue; 
-            int intValu = 2147483647; // int : - 21¾ï ~ 21¾ï (4 bytes Å©±â)
-            System.Int32 intVal2 = System.Int32.MinValue;
-            uint uintVal = 4294967295; // unsigned int : 0 ~ 42¾ï (4 bytes Å©±â)
-            System.UInt32 uintVal2 = System.UInt32.MaxValue;    
-            long lngVal = 9000000000000000000; // long : -92°æ ~ 92°æ
-            ulong ulngVal = 18000000000000000000; // unsigned long : 1800°æ(8 bytes Å©±â)
-            System.Int64 longVal02; // (8bytes)
-            System.Int128 bigLongVal03; // (16bytes)
+            // unsigned : ë¶€í˜¸ê°€ ì—†ë‹¤ëŠ” ëœ»
+            // System.~~~~ : ì˜ ì‚¬ìš©ë˜ì§€ ì•ŠìŒ. ê·¸ë˜ì„œ íšŒìƒ‰í‘œì‹œë¨.
+            // ì •ìˆ˜ ìë£Œí˜•
+            sbyte sbtVal = 127; // signed byte : -128 ~ 127 ìˆ˜ ì €ì¥
+            System.SByte sbtVal2 = System.SByte.MinValue; // -128 í• ë‹¹
+            byte btVal = 255; // byte : 0 ~ 255 ìˆ˜ ì €ì¥(1 byte í¬ê¸°)
+            System.Byte btVal2 = System.Byte.MinValue; // 0 í• ë‹¹
+            short stVal = 32767; // short : -32768 ~ 32767 ìˆ˜ ì €ì¥
+            System.Int16 stVal2 = System.Int16.MinValue; // -32768 í• ë‹¹
+            ushort ustVal = 65535; // unsigned short : 0 ~ 65535 ìˆ˜ ì €ì¥(2byte)
+            System.UInt16 ustVal2 = System.UInt16.MinValue; // 0 í• ë‹¹
+            int itVal = 2147483647; // int : -2147483648(-21ì–µ) ~ 2147483647(21ì–µ) ìˆ˜ ì €ì¥(4bytes)
+            System.Int32 itVal2 = System.Int32.MinValue; // -2147483648 í• ë‹¹
+            uint uintVal = 4294967295; // unsigned int : 0 ~ 4294967295(42ì–µ) ìˆ˜ ì €ì¥(4bytes)
+            System.UInt32 uintVal2 = System.UInt32.MinValue; // 0 í• ë‹¹
+            long lngVal = 9223372036854775807; // long : -9223372036854775808(-92ê²½) ~ 9223372036854775807(92ê²½) ìˆ˜ ì €ì¥(8bytes)
+            ulong ulngVal = 18446744073709551615; // unsigned long : 0 ~ 18446744073709551615(184ì¡°) ìˆ˜ ì €ì¥(8bytes)
+            System.Int64 longVal02; //  (8bytes)
+            System.Int128 biglongVal03; // (16bytes)
 
-            // ½Ç¼ö ÀÚ·áÇü
-            float fVal = 3.141592f; // float : 4byte ¼Ò¼öÁ¡
-            System.Single fVal2 = System.Single.MinValue;
-            double dVal = 3.141592; // double : 8bytes ¼Ò¼öÁ¡
+            // ì‹¤ìˆ˜ ìë£Œí˜•
+            float fVal = 3.141592f; // float : 1.5E-45 ~ 3.4E+38(4bytes)
+            System.Single fVal2 = System.Single.MinValue; // 1.5E-45 í• ë‹¹
+            double dVal = 3.141592; // double : 5.0E-324 ~ 1.7E+308(8bytes)
             System.Double dVal2;
-            decimal dcVal = 3.141592m; // decimal : 16bytes ¼Ò¼öÁ¡
-            System.Decimal dcVal2;
+            decimal decVal = 3.141592m; // decimal : Â±1.0 x 10^-28 ~ Â±7.9 x 10^28(16bytes)
+            System.Decimal decVal2;
 
-            // ¹®ÀÚÇü Å¸ÀÔ
+            // ë¬´ìí˜• íƒ€ì…
             char ch01 = 'A';
             System.Char ch03 = 'B';
             Console.WriteLine(ch01);
             char ch02 = '\u25b6';
             Console.WriteLine(ch02);
 
-            string str01 = "Hello \n World!"; // \0 : end of line
+            string str01 = "Hello\0World!"; // \0 : end of line
             System.String str02 = "Hello C#";
 
-            // ºÒ¸° Å¸ÀÔ
+            // ë¶ˆë¦° íƒ€ì…
             bool bool01 = true;
             System.Boolean bool02 = false;
 
             // Nullable
-            // int int02 = null;   // ±âº» Å¸ÀÔ(Á¤¼öÇü, ½Ç¼öÇü, ºÒ¸° / ¹®ÀÚ¿­Á¦¿Ü)Àº NULL ÇÒ´çºÒ°¡
-            int? int03 = null;  // ±âº» Å¸ÀÔ µÚ¿¡ ? ºÙ¿©ÁÙ
+            //int int02 = null;   // ê¸°ë³¸íƒ€ì…(ì •ìˆ˜í˜•, ì‹¤ìˆ˜í˜•, ë¶ˆë¦° / ë¬¸ìì—´ì œì™¸)ì€ NULLì„ í• ë‹¹í•  ìˆ˜ ì—†ìŒ
+            int? int03 = null;  // ê¸°ë³¸íƒ€ì… ë’¤ì— ? ë¶™ì—¬ì¤€ ê²ƒ
 
-            // »ó¼ö Å¸ÀÔ
-            const int int04 = 15; // const¸¦ ¸¸³ª¸é »ó¼ö. ÇÑ ¹ø ÇÒ´ç ÈÄ º¯°æ ºÒ°¡
-            // int04 = 26;
+            // ìƒìˆ˜íƒ€ì…
+            const int int04 = 15;   // constë¥¼ ë§Œë‚˜ë©´ ìƒìˆ˜. í•œë²ˆ í• ë‹¹í›„ ë³€ê²½ ë¶ˆê°€
+            //int04 = 16;
 
-            // µ¿Àû Å¸ÀÔ // ÄÄÆÄÀÏ µÇ¸é¼­ ÇØ´ç Å¸ÀÔÀ¸·Î Çü°áÁ¤
+            // ë™ì íƒ€ì… // ì»´íŒŒì¼ë˜ë©´ì„œ í•´ë‹¹ íƒ€ì…ìœ¼ë¡œ í˜•ê²°ì •
             var int05 = false;
 
-            //int05 = "string";
+            // int05 = "string";
 
+            //MessageBox.Show(itVal2.ToString() + ch01 + ch02, "Variable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            MessageBox.Show(int03.ToString(), "Variable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        }
 
-            //MessageBox.Show(intVal2.ToString(), "Variable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-            MessageBox.Show(str01, "Variable", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+        private void BtnMsg_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("ë©”ì‹œì§€", "ì•Œë¦¼", MessageBoxButtons.OK, MessageBoxIcon.Warning);
         }
     }
 }
