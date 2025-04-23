@@ -670,6 +670,12 @@ Convert.ToInt32(null);     // 0 반환함
 
 ## C# 문법 : 10. 예외 처리 (Exception Handling)
 
+
+
+https://github.com/user-attachments/assets/322bfd4a-f7ba-4e33-81c3-55ec3fedb0c0
+
+
+
 ### 10-1. 목적
 
 - 프로그램 실행 중 예상하지 못한 오류로 인한 비정상 종료를 막기 위함
