@@ -1078,7 +1078,7 @@ do_callback(greet)  # greet이 콜백 함수가 됨
     - 백엔드는 C# 윈앱과 거의 동일, 프론트엔드만 차이
         - 윈앱과는 다르게 코딩으로 디자인을 수행. 윈앱처럼 디자이너 사용 가능
         - 디자이너 -> Blend for Visual Studio 디자인툴 사용
-        - 개발자 -> VS에거 코딩으로 디자인
+        - 개발자 -> VS에서 코딩으로 디자인
 
     <img src="./image/cs0017.png" width="400">
     
