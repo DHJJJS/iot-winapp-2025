@@ -1431,7 +1431,7 @@ C# WinForms 기반의 개인용 단어 암기장 애플리케이션입니다.
 - C# (.NET Framework, WinForms)
 - Visual Studio 2022
 - 파일 저장: 텍스트 기반
-- UI 구성: `ListView`, `Label`, `Button`, `TextBox`
+- UI 구성: `ListView`, `GroupBox`, `RadioButton`, `CheckBox`, `Label`, `Button`
 
 ---
 
@@ -1449,5 +1449,3 @@ C# WinForms 기반의 개인용 단어 암기장 애플리케이션입니다.
 - [ ] SQLite로 데이터 저장 방식 전환
 - [ ] 단어 수정 기능
 - [ ] 단어 자동 정렬 기준 확장 (정답률 등)
-
----
